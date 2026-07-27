@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="180" viewBox="0 0 800 180">
+  <defs>
+    <!-- Background Grid Pattern -->
+    <pattern id="hg" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0L0 0 0 40" fill="none" stroke="#FF9E00" stroke-width="0.8" opacity="0.04"/>
+    </pattern>
+
+    <!-- Holographic Card Border Gradient -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#7000FF" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#7000FF" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <!-- Title Gradient (Amber Neon) -->
+    <linearGradient id="title-amber" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF9E00"/>
+      <stop offset="100%" stop-color="#FFD166"/>
+    </linearGradient>
+
+    <!-- Glow Filters -->
+    <filter id="gc" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-amber" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-lime" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    .fm { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace; }
+    .fs { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+
+    @keyframes br { 0%, 100% { opacity: 0.35; } 50% { opacity: 0.85; } }
+    @keyframes card-pulse { 0%, 100% { opacity: 0.4; stroke-width: 1px; } 50% { opacity: 0.9; stroke-width: 1.5px; } }
+    @keyframes dp { 0%, 100% { transform: scale(0.85); opacity: 0.6; } 50% { transform: scale(1.2); opacity: 1; } 100% { transform: scale(0.85); opacity: 0.6; } }
+
+    .gp { animation: br 3.5s ease-in-out infinite; }
+    .card-border { animation: card-pulse 3.5s ease-in-out infinite; }
+    .dot-pulse { animation: dp 2.2s ease-in-out infinite; }
+
+    /* Interactive Hover Transitions for Social Cards */
+    .social-card { cursor: pointer; }
+    .social-card-bg { transition: fill-opacity 0.3s, stroke-opacity 0.3s, filter 0.3s; }
+    .social-card:hover .social-card-bg { fill-opacity: 0.75; stroke-opacity: 1; filter: drop-shadow(0 0 6px #FF9E00); }
+  </style>
+
+  <!-- Background -->
+  <rect width="800" height="180" fill="#090D16"/>
+  <rect width="800" height="180" fill="url(#hg)"/>
+
+  <!-- Outer Card Border -->
+  <rect x="15" y="15" width="770" height="150" rx="10" fill="none" stroke="url(#bg)" stroke-width="1.5"/>
+  <rect x="15" y="15" width="770" height="150" rx="10" fill="none" stroke="#00F0FF" stroke-width="2" opacity="0.35" class="gp" filter="url(#gc)"/>
+
+  <!-- HUD Decorative Corner Ticks -->
+  <circle cx="132" cy="15" r="2.5" fill="#FF9E00" opacity="0.8"/>
+  <circle cx="668" cy="15" r="2.5" fill="#FF9E00" opacity="0.8"/>
+  <text x="32" y="30" class="fm" font-size="8" fill="#00F0FF" opacity="0.5">YM_SYS // COMM_UPLINK_V2</text>
+  <text x="768" y="30" class="fm" font-size="8" fill="#FF9E00" opacity="0.5" text-anchor="end">STATUS // ACTIVE</text>
+
+  <!-- Header Title: CONNECT -->
+  <text x="400" y="44" class="fs gp" font-size="24" font-weight="900" letter-spacing="7" fill="url(#title-amber)" text-anchor="middle" filter="url(#glow-amber)">CONNECT</text>
+  <text x="400" y="44" class="fs" font-size="24" font-weight="900" letter-spacing="7" fill="url(#title-amber)" text-anchor="middle">CONNECT</text>
+  <text x="400" y="58" class="fm" font-size="9" fill="#00F0FF" opacity="0.75" letter-spacing="1" text-anchor="middle">// ESTABLISHING UPLINK — YUSUF MAULANA</text>
+
+  <!-- ==================== GRID CARDS (1 Row x 4 Columns) ==================== -->
+  
+  <!-- Col 1: LinkedIn -->
+  <g transform="translate(30, 78)" class="social-card">
+    <a href="https://linkedin.com/in/yusufmaaulana" target="_blank">
+      <rect width="170" height="62" rx="6" fill="#101625" fill-opacity="0.5" stroke="#FF9E00" stroke-width="1" class="social-card-bg card-border"/>
+      <!-- Corner brackets -->
+      <path d="M 0,8 L 0,0 L 8,0 M 170,8 L 170,0 L 162,0 M 0,54 L 0,62 L 8,62 M 170,54 L 170,62 L 162,62" fill="none" stroke="#00F0FF" stroke-width="1.2" opacity="0.7"/>
+      <!-- Icon (LinkedIn) -->
+      <path d="M 14,22 h 5 v 16 h -5 z M 16.5,13 a 3,3 0 1,1 0,6 a 3,3 0 1,1 0,-6 M 23,22 h 5 v 2.2 h 0.1 a 5,5 0 0,1 4.5,-2.6 c 4.8,0 5.7,3.2 5.7,7.3 V 38 h -5 V 29.5 c 0,-2 0,-4.5 -2.7,-4.5 -2.7,0 -3.1,2.1 -3.1,4.3 V 38 h -4.5 z" fill="#00F0FF"/>
+      <!-- Platform Label -->
+      <text x="44" y="28" class="fs" font-size="11" font-weight="bold" fill="#FFFFFF">LinkedIn</text>
+      <text x="44" y="42" class="fm" font-size="8" fill="#8E9CAE">yusufmaaulana</text>
+      <!-- Connected Status Badge -->
+      <circle cx="120" cy="50" r="2.5" fill="#00FF88" filter="url(#glow-lime)" class="dot-pulse" style="transform-origin: 120px 50px;"/>
+      <text x="126" y="53" class="fm" font-size="7.5" font-weight="bold" fill="#00FF88" letter-spacing="0.5">CONNECTED</text>
+    </a>
+  </g>
+
+  <!-- Col 2: GitHub -->
+  <g transform="translate(217, 78)" class="social-card">
+    <a href="https://github.com/Yusufmaulanaaa" target="_blank">
+      <rect width="170" height="62" rx="6" fill="#101625" fill-opacity="0.5" stroke="#FF9E00" stroke-width="1" class="social-card-bg card-border"/>
+      <path d="M 0,8 L 0,0 L 8,0 M 170,8 L 170,0 L 162,0 M 0,54 L 0,62 L 8,62 M 170,54 L 170,62 L 162,62" fill="none" stroke="#00F0FF" stroke-width="1.2" opacity="0.7"/>
+      <!-- Icon (GitHub) -->
+      <path d="M 21,15 a 10,10 0 0,0 -3.2,19.5 c 0.5,0.1 0.7,-0.2 0.7,-0.5 v -1.7 c -2.8,0.6 -3.4,-1.3 -3.4,-1.3 -0.4,-1.2 -1.1,-1.5 -1.1,-1.5 -0.9,-0.6 0.1,-0.6 0.1,-0.6 1,0.1 1.5,1 1.5,1 0.9,1.5 2.4,1.1 3,0.8 0.1,-0.7 0.3,-1.1 0.7,-1.3 -2.2,-0.2 -4.6,-1.1 -4.6,-5 a 3.9,3.9 0 0,1 1,-2.7 3.7,3.7 0 0,1 0.1,-2.7 s 0.8,-0.3 2.7,1 a 9.6,9.6 0 0,1 5,0 c 1.9,-1.3 2.7,-1 2.7,-1 0.3,0.8 0.1,1.8 0.1,2.7 a 3.9,3.9 0 0,1 1,2.7 c 0,3.9 -2.4,4.8 -4.6,5 0.3,0.3 0.7,0.9 0.7,1.9 v 2.8 c 0,0.3 0.2,0.6 0.7,0.5 A 10,10 0 0,0 21,15 z" fill="#00F0FF"/>
+      <text x="44" y="28" class="fs" font-size="11" font-weight="bold" fill="#FFFFFF">GitHub</text>
+      <text x="44" y="42" class="fm" font-size="8" fill="#8E9CAE">Yusufmaulanaaa</text>
+      <circle cx="120" cy="50" r="2.5" fill="#00FF88" filter="url(#glow-lime)" class="dot-pulse" style="transform-origin: 120px 50px;"/>
+      <text x="126" y="53" class="fm" font-size="7.5" font-weight="bold" fill="#00FF88" letter-spacing="0.5">CONNECTED</text>
+    </a>
+  </g>
+
+  <!-- Col 3: Email -->
+  <g transform="translate(404, 78)" class="social-card">
+    <a href="mailto:yusufmaulanasyifa25@gmail.com" target="_blank">
+      <rect width="180" height="62" rx="6" fill="#101625" fill-opacity="0.5" stroke="#FF9E00" stroke-width="1" class="social-card-bg card-border"/>
+      <path d="M 0,8 L 0,0 L 8,0 M 180,8 L 180,0 L 172,0 M 0,54 L 0,62 L 8,62 M 180,54 L 180,62 L 172,62" fill="none" stroke="#00F0FF" stroke-width="1.2" opacity="0.7"/>
+      <!-- Icon (Email) -->
+      <path d="M 12,18 h 18 a 1.8,1.8 0 0,1 1.8,1.8 v 12 a 1.8,1.8 0 0,1 -1.8,1.8 H 12 a 1.8,1.8 0 0,1 -1.8,-1.8 V 19.8 a 1.8,1.8 0 0,1 1.8,-1.8 z M 13,20 v 1.8 l 8,4.8 8,-4.8 V 20 z" fill="#00F0FF"/>
+      <text x="38" y="28" class="fs" font-size="11" font-weight="bold" fill="#FFFFFF">Email</text>
+      <text x="38" y="42" class="fm" font-size="7.5" fill="#8E9CAE">yusufmaulanasyifa25...</text>
+      <circle cx="130" cy="50" r="2.5" fill="#00FF88" filter="url(#glow-lime)" class="dot-pulse" style="transform-origin: 130px 50px;"/>
+      <text x="136" y="53" class="fm" font-size="7.5" font-weight="bold" fill="#00FF88" letter-spacing="0.5">CONNECTED</text>
+    </a>
+  </g>
+
+  <!-- Col 4: Instagram -->
+  <g transform="translate(598, 78)" class="social-card">
+    <a href="https://instagram.com/maulanaaucup" target="_blank">
+      <rect width="172" height="62" rx="6" fill="#101625" fill-opacity="0.5" stroke="#FF9E00" stroke-width="1" class="social-card-bg card-border"/>
+      <path d="M 0,8 L 0,0 L 8,0 M 172,8 L 172,0 L 164,0 M 0,54 L 0,62 L 8,62 M 172,54 L 172,62 L 164,62" fill="none" stroke="#00F0FF" stroke-width="1.2" opacity="0.7"/>
+      <!-- Icon (Instagram) -->
+      <path d="M 16,14 h 10 a 5,5 0 0,1 5,5 v 10 a 5,5 0 0,1 -5,5 H 16 a 5,5 0 0,1 -5,-5 V 19 a 5,5 0 0,1 5,-5 z M 21,20 a 4,4 0 1,0 0,8 a 4,4 0 0,0 0,-8 z M 26.5,17.5 a 0.8,0.8 0 1,0 0,-1.6 a 0.8,0.8 0 0,0 0,1.6 z" fill="#00F0FF"/>
+      <text x="42" y="28" class="fs" font-size="11" font-weight="bold" fill="#FFFFFF">Instagram</text>
+      <text x="42" y="42" class="fm" font-size="8" fill="#8E9CAE">@maulanaaucup</text>
+      <circle cx="122" cy="50" r="2.5" fill="#00FF88" filter="url(#glow-lime)" class="dot-pulse" style="transform-origin: 122px 50px;"/>
+      <text x="128" y="53" class="fm" font-size="7.5" font-weight="bold" fill="#00FF88" letter-spacing="0.5">CONNECTED</text>
+    </a>
+  </g>
+</svg>

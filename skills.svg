@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="380" viewBox="0 0 800 380">
+  <defs>
+    <!-- Grid Pattern -->
+    <pattern id="hg" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0L0 0 0 40" fill="none" stroke="#FF9E00" stroke-width="0.8" opacity="0.04"/>
+    </pattern>
+
+    <!-- Card Border Gradient -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#7000FF" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#7000FF" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <!-- Title Gradient -->
+    <linearGradient id="title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF9E00"/>
+      <stop offset="100%" stop-color="#00F0FF"/>
+    </linearGradient>
+
+    <!-- Glow Filters -->
+    <filter id="gc" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-amber" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    .fm { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace; }
+    .fs { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+
+    @keyframes br { 0%, 100% { opacity: 0.35; } 50% { opacity: 0.85; } }
+    @keyframes bento-pulse { 0%, 100% { opacity: 0.3; stroke-width: 1.2px; } 50% { opacity: 0.8; stroke-width: 1.8px; } }
+
+    .gp { animation: br 3.5s ease-in-out infinite; }
+    .bento-cyan { animation: bento-pulse 4s ease-in-out infinite; }
+    .bento-violet { animation: bento-pulse 4s ease-in-out infinite 1.3s; }
+    .bento-lime { animation: bento-pulse 4s ease-in-out infinite 2.6s; }
+
+    /* Interactive Hover Transitions for Badges */
+    .badge-group { cursor: pointer; }
+    .badge-bg { transition: fill-opacity 0.3s, stroke-width 0.3s, stroke-opacity 0.3s, filter 0.3s; }
+    .badge-text { transition: fill 0.3s, text-shadow 0.3s; }
+
+    .group-cyan:hover .badge-bg { fill-opacity: 0.8; stroke-width: 1.5px; stroke-opacity: 1; filter: drop-shadow(0 0 4px #00F0FF); }
+    .group-cyan:hover .badge-text { fill: #FFFFFF; text-shadow: 0 0 6px #00F0FF; }
+
+    .group-violet:hover .badge-bg { fill-opacity: 0.8; stroke-width: 1.5px; stroke-opacity: 1; filter: drop-shadow(0 0 4px #7000FF); }
+    .group-violet:hover .badge-text { fill: #FFFFFF; text-shadow: 0 0 6px #7000FF; }
+
+    .group-lime:hover .badge-bg { fill-opacity: 0.8; stroke-width: 1.5px; stroke-opacity: 1; filter: drop-shadow(0 0 4px #00FF88); }
+    .group-lime:hover .badge-text { fill: #FFFFFF; text-shadow: 0 0 6px #00FF88; }
+  </style>
+
+  <!-- Background -->
+  <rect width="800" height="380" fill="#090D16"/>
+  <rect width="800" height="380" fill="url(#hg)"/>
+
+  <!-- Outer Card Border -->
+  <rect x="15" y="15" width="770" height="350" rx="10" fill="none" stroke="url(#bg)" stroke-width="1.5"/>
+  <rect x="15" y="15" width="770" height="350" rx="10" fill="none" stroke="#00F0FF" stroke-width="2" opacity="0.35" class="gp" filter="url(#gc)"/>
+
+  <!-- HUD Decorative Corner Ticks -->
+  <circle cx="132" cy="15" r="2.5" fill="#FF9E00" opacity="0.8"/>
+  <circle cx="668" cy="15" r="2.5" fill="#FF9E00" opacity="0.8"/>
+  <text x="32" y="30" class="fm" font-size="8" fill="#00F0FF" opacity="0.5">YM_SYS // SKILL_MATRIX_V2.5</text>
+  <text x="768" y="30" class="fm" font-size="8" fill="#FF9E00" opacity="0.5" text-anchor="end">CAPACITY // 99.8%</text>
+
+  <!-- Header Title: LIVERPOOL -->
+  <text x="400" y="46" class="fs gp" font-size="26" font-weight="900" letter-spacing="8" fill="url(#title-grad)" text-anchor="middle" filter="url(#glow-amber)">LIVERPOOL</text>
+  <text x="400" y="46" class="fs" font-size="26" font-weight="900" letter-spacing="8" fill="url(#title-grad)" text-anchor="middle">LIVERPOOL</text>
+
+  <!-- Sci-Fi Divider Line -->
+  <path d="M 260,56 L 310,56 L 315,60 L 485,60 L 490,56 L 540,56" fill="none" stroke="#FF9E00" stroke-width="1.2" opacity="0.6"/>
+
+  <!-- ==================== BENTO BOX 1: DATA SCIENCE & ANALYTICS ==================== -->
+  <g>
+    <rect x="30" y="75" width="360" height="135" rx="8" fill="#101625" fill-opacity="0.5" stroke="#00F0FF" stroke-width="1.2" class="bento-cyan"/>
+    <text x="45" y="96" class="fm" font-size="10.5" font-weight="bold" fill="#00F0FF" letter-spacing="1">// DATA SCIENCE &amp; ANALYTICS</text>
+    
+    <!-- Badges Row 1 -->
+    <g transform="translate(45, 110)" class="badge-group group-cyan">
+      <rect width="75" height="25" rx="5" fill="#090D16" fill-opacity="0.7" stroke="#00F0FF" stroke-opacity="0.4" stroke-width="1" class="badge-bg"/>
+      <text x="37.5" y="16.5" class="fm badge-text" font-size="10" font-weight="bold" fill="#00F0FF" text-anchor="middle">PYTHON</text>
+    </g>
+    <g transform="translate(130, 110)" class="badge-group group-cyan">
+      <rect width="70" height="25" rx="5" fill="#090D16" fill-opacity="0.7" stroke="#00F0FF" stroke-opacity="0.4" stroke-width="1" class="badge-bg"/>
+      <text x="35" y="16.5" class="fm badge-text" font-size="10" font-weight="bold" fill="#00F0FF" text-anchor="middle">MYSQL</text>
+    </g>
+    <g transform="translate(210, 110)" class="badge-group group-cyan">
+      <rect width="95" height="25" rx="5" fill="#090D16" fill-opacity="0.7" stroke="#00F0FF" stroke-opacity="0.4" stroke-width="1" class="badge-bg"/>
+      <text x="47.5" y="16.5" class="fm badge-text" font-size="10" font-weight="bold" fill="#00F0FF" text-anchor="middle">BIGQUERY</text>
+    </g>
+    
+    <!-- Badges Row 2 -->
+    <g transform="translate(45, 145)" class="badge-group group-cyan">
+      <rect width="180" height="25" rx="5" fill="#090D16" fill-opacity="0.7" stroke="#00F0FF" stroke-opacity="0.4" stroke-width="1" class="badge-bg"/>
+      <text x="90" y="16.5" class="fm badge-text" font-size="10" font-weight="bold" fill="#00F0FF" text-anchor="middle">QUANTITATIVE ANALYSIS</text>
+    </g>
+  </g>
+
+  <!-- ==================== BENTO BOX 2: WEB DEVELOPMENT & CREATIVE ==================== -->
+  <g>
+    <rect x="410" y="75" width="360" height="135" rx="8" fill="#101625" fill-opacity="0.5" stroke="#7000FF" stroke-width="1.2" class="bento-violet"/>
+    <text x="425" y="96" class="fm" font-size="10.5" font-weight="bold" fill="#7000FF" letter-spacing="1">// WEB DEVELOPMENT &amp; CREATIVE</text>
+    
+    <!-- Badges Row 1 -->
+    <g transform="translate(425, 110)" class="badge-group group-violet">
+      <rect width="85" height="25" rx="5" fill="#090D16" fill-opacity="0.7" stroke="#7000FF" stroke-opacity="0.4" stroke-width="1" class="badge-bg"/>
+      <text x="42.5" y="16.5" class="fm badge-text" font-size="10" font-weight="bold" fill="#7000FF" text-anchor="middle">ASTRO JS</text>
+    </g>
+    <g transform="translate(520, 110)" class="badge-group group-violet">
+      <rect width="70" height="25" rx="5" fill="#090D16" fill-opacity="0.7" stroke="#7000FF" stroke-opacity="0.4" stroke-width="1" class="badge-bg"/>
+      <text x="35" y="16.5" class="fm badge-text" font-size="10" font-weight="bold" fill="#7000FF" text-anchor="middle">REACT</text>
+    </g>
+    <g transform="translate(600, 110)" class="badge-group group-violet">
+      <rect width="115" height="25" rx="5" fill="#090D16" fill-opacity="0.7" stroke="#7000FF" stroke-opacity="0.4" stroke-width="1" class="badge-bg"/>
+      <text x="57.5" y="16.5" class="fm badge-text" font-size="10" font-weight="bold" fill="#7000FF" text-anchor="middle">TAILWIND CSS</text>
+    </g>
+    
+    <!-- Badges Row 2 -->
+    <g transform="translate(425, 145)" class="badge-group group-violet">
+      <rect width="100" height="25" rx="5" fill="#090D16" fill-opacity="0.7" stroke="#7000FF" stroke-opacity="0.4" stroke-width="1" class="badge-bg"/>
+      <text x="50" y="16.5" class="fm badge-text" font-size="10" font-weight="bold" fill="#7000FF" text-anchor="middle">TYPESCRIPT</text>
+    </g>
+    <g transform="translate(535, 145)" class="badge-group group-violet">
+      <rect width="100" height="25" rx="5" fill="#090D16" fill-opacity="0.7" stroke="#7000FF" stroke-opacity="0.4" stroke-width="1" class="badge-bg"/>
+      <text x="50" y="16.5" class="fm badge-text" font-size="10" font-weight="bold" fill="#7000FF" text-anchor="middle">BLENDER 3D</text>
+    </g>
+  </g>
+
+  <!-- ==================== BENTO BOX 3: TRADING & ALGORITHMIC SYSTEMS ==================== -->
+  <g>
+    <rect x="30" y="225" width="740" height="120" rx="8" fill="#101625" fill-opacity="0.5" stroke="#00FF88" stroke-width="1.2" class="bento-lime"/>
+    <text x="45" y="246" class="fm" font-size="10.5" font-weight="bold" fill="#00FF88" letter-spacing="1">// TRADING &amp; ALGORITHMIC SYSTEMS</text>
+    
+    <!-- Badges -->
+    <g transform="translate(45, 265)" class="badge-group group-lime">
+      <rect width="150" height="25" rx="5" fill="#090D16" fill-opacity="0.7" stroke="#00FF88" stroke-opacity="0.4" stroke-width="1" class="badge-bg"/>
+      <text x="75" y="16.5" class="fm badge-text" font-size="10" font-weight="bold" fill="#00FF88" text-anchor="middle">XAU/USD SCALPING</text>
+    </g>
+    <g transform="translate(205, 265)" class="badge-group group-lime">
+      <rect width="165" height="25" rx="5" fill="#090D16" fill-opacity="0.7" stroke="#00FF88" stroke-opacity="0.4" stroke-width="1" class="badge-bg"/>
+      <text x="82.5" y="16.5" class="fm badge-text" font-size="10" font-weight="bold" fill="#00FF88" text-anchor="middle">ALGORITHMIC TRADING</text>
+    </g>
+    <g transform="translate(380, 265)" class="badge-group group-lime">
+      <rect width="150" height="25" rx="5" fill="#090D16" fill-opacity="0.7" stroke="#00FF88" stroke-opacity="0.4" stroke-width="1" class="badge-bg"/>
+      <text x="75" y="16.5" class="fm badge-text" font-size="10" font-weight="bold" fill="#00FF88" text-anchor="middle">RISK MANAGEMENT</text>
+    </g>
+  </g>
+</svg>
