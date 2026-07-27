@@ -9,87 +9,90 @@
       <stop offset="100%" stop-color="#7000FF" stop-opacity="0.9"/>
     </linearGradient>
     <linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%"   stop-color="#00F0FF" stop-opacity="0"/>
-      <stop offset="20%"  stop-color="#00F0FF" stop-opacity="0.9"/>
-      <stop offset="50%"  stop-color="#00FF88" stop-opacity="1"/>
-      <stop offset="80%"  stop-color="#7000FF" stop-opacity="0.9"/>
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#00F0FF" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#00FF88" stop-opacity="1"/>
+      <stop offset="80%" stop-color="#7000FF" stop-opacity="0.9"/>
       <stop offset="100%" stop-color="#7000FF" stop-opacity="0"/>
     </linearGradient>
     <linearGradient id="ng" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%"   stop-color="#00F0FF"/>
+      <stop offset="0%" stop-color="#00F0FF"/>
       <stop offset="100%" stop-color="#7000FF"/>
     </linearGradient>
     <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"   stop-color="#00F0FF" stop-opacity="0"/>
-      <stop offset="50%"  stop-color="#00F0FF" stop-opacity="0.07"/>
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#00F0FF" stop-opacity="0.12"/>
       <stop offset="100%" stop-color="#00F0FF" stop-opacity="0"/>
     </linearGradient>
     <clipPath id="cc">
       <rect x="16" y="16" width="768" height="228" rx="9"/>
     </clipPath>
-    <filter id="gc" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="6" result="b"/>
+    <filter id="gc" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <filter id="gg" x="-40%" y="-40%" width="180%" height="180%">
+    <filter id="gg" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="3" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
+
   <style>
-    .fm{font-family:ui-monospace,'Cascadia Code','Source Code Pro',Menlo,Consolas,monospace}
-    .fs{font-family:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
-    @keyframes scan{0%{transform:translateY(0)}100%{transform:translateY(228px)}}
-    @keyframes br{0%,100%{opacity:.3}50%{opacity:.9}}
-    @keyframes dp{0%,100%{transform:scale(.85);opacity:.6}50%{transform:scale(1.2);opacity:1}}
-    .scanline{animation:scan 8s linear infinite}
-    .gp{animation:br 3.5s ease-in-out infinite}
-    .dot{animation:dp 2s ease-in-out infinite;transform-origin:355px 218px}
-    .bg{animation:br 2.8s ease-in-out infinite}
+    .fm { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace; }
+    .fs { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+
+    @keyframes scan { 0% { transform: translateY(0px); } 100% { transform: translateY(228px); } }
+    @keyframes br { 0%, 100% { opacity: 0.35; } 50% { opacity: 0.9; } }
+    @keyframes dp { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+
+    .scanline { animation: scan 6s linear infinite; }
+    .gp { animation: br 3.5s ease-in-out infinite; }
+    .dot { animation: dp 1.8s ease-in-out infinite; }
+    .bg-pulse { animation: br 2.8s ease-in-out infinite; }
   </style>
 
+  <!-- Background -->
   <rect width="800" height="260" fill="#090D16"/>
   <rect width="800" height="260" fill="url(#hg)"/>
 
   <!-- Scanline -->
   <g clip-path="url(#cc)">
-    <rect x="16" y="16" width="768" height="22" fill="url(#sg)" class="scanline"/>
+    <rect x="16" y="16" width="768" height="30" fill="url(#sg)" class="scanline"/>
   </g>
 
-  <!-- Card border -->
+  <!-- Outer Card Border -->
   <rect x="15" y="15" width="770" height="230" rx="10" fill="none" stroke="url(#bg)" stroke-width="1.5"/>
   <rect x="15" y="15" width="770" height="230" rx="10" fill="none" stroke="#00F0FF" stroke-width="2" opacity="0.35" class="gp" filter="url(#gc)"/>
 
-  <!-- HUD ticks top -->
+  <!-- HUD Decorative Corner Ticks -->
   <line x1="110" y1="15" x2="155" y2="15" stroke="#FF9E00" stroke-width="2" opacity="0.7"/>
   <circle cx="132" cy="15" r="2.5" fill="#FF9E00" opacity="0.8"/>
   <line x1="645" y1="15" x2="690" y2="15" stroke="#FF9E00" stroke-width="2" opacity="0.7"/>
   <circle cx="668" cy="15" r="2.5" fill="#FF9E00" opacity="0.8"/>
-  <!-- HUD ticks side -->
   <line x1="15" y1="100" x2="15" y2="130" stroke="#00F0FF" stroke-width="2.5" opacity="0.5"/>
   <line x1="785" y1="100" x2="785" y2="130" stroke="#7000FF" stroke-width="2.5" opacity="0.5"/>
 
-  <!-- Terminal labels -->
-  <text x="32"  y="30" class="fm" font-size="8" fill="#00F0FF" opacity="0.5">YM_OS // BOOT_COMPLETE // ARC.NODE_7F</text>
+  <!-- Terminal HUD Labels -->
+  <text x="32" y="30" class="fm" font-size="8" fill="#00F0FF" opacity="0.5">YM_SYS // BOOT_COMPLETE // ARC.NODE_7F</text>
   <text x="768" y="30" class="fm" font-size="8" fill="#FF9E00" opacity="0.5" text-anchor="end">SYS_REV_v1.0.4 // 2025</text>
 
-  <!-- Name: glow layer + crisp layer -->
+  <!-- Name Title -->
   <text x="400" y="112" class="fs gp" font-size="44" font-weight="900" letter-spacing="7" fill="url(#ng)" text-anchor="middle" filter="url(#gc)">YUSUF MAULANA</text>
-  <text x="400" y="112" class="fs"    font-size="44" font-weight="900" letter-spacing="7" fill="url(#ng)" text-anchor="middle">YUSUF MAULANA</text>
+  <text x="400" y="112" class="fs" font-size="44" font-weight="900" letter-spacing="7" fill="url(#ng)" text-anchor="middle">YUSUF MAULANA</text>
 
-  <!-- Laser beam -->
+  <!-- Laser Beam -->
   <line x1="180" y1="128" x2="620" y2="128" stroke="url(#lg)" stroke-width="1.5" class="gp"/>
 
-  <!-- Subtitle -->
+  <!-- Subtitles -->
   <text x="400" y="158" class="fs" font-size="12" font-weight="600" letter-spacing="1.5" fill="#8E9CAE" text-anchor="middle">DATA SCIENCE &amp; ANALYTICS  •  FRONTEND DEV  •  QUANT TRADING</text>
-
-  <!-- HUD status line -->
   <text x="400" y="182" class="fm" font-size="9.5" letter-spacing="1" fill="#00F0FF" opacity="0.8" text-anchor="middle">SYS_STATUS:&#160;<tspan fill="#00FF88" font-weight="bold">ONLINE</tspan>&#160;&#160;//&#160;&#160;ROLE:&#160;ARCHITECT&#160;&#160;//&#160;&#160;NODE:&#160;SECURE</text>
 
-  <!-- OPEN TO WORK badge — rect center=400 (x=325,w=150); dot cx=355; text x=408 text-anchor=middle → content centered at ~400 -->
-  <rect x="325" y="205" width="150" height="26" rx="13" fill="#090D16" fill-opacity="0.85" stroke="#00FF88" stroke-width="1.3" class="bg" filter="url(#gg)"/>
-  <rect x="325" y="205" width="150" height="26" rx="13" fill="none"    stroke="#00FF88" stroke-width="0.8" opacity="0.5"/>
-  <circle cx="355" cy="218" r="4.5" fill="#00FF88" filter="url(#gg)" class="dot"/>
-  <circle cx="355" cy="218" r="2"   fill="#fff"/>
-  <text x="408" y="222" class="fm" font-size="9.5" font-weight="bold" letter-spacing="1.5" fill="#00FF88" text-anchor="middle">OPEN TO WORK</text>
+  <!-- Badge OPEN TO WORK -->
+  <g>
+    <rect x="325" y="205" width="150" height="26" rx="13" fill="#090D16" fill-opacity="0.85" stroke="#00FF88" stroke-width="1.3" class="bg-pulse" filter="url(#gg)"/>
+    <rect x="325" y="205" width="150" height="26" rx="13" fill="none" stroke="#00FF88" stroke-width="0.8" opacity="0.5"/>
+    <circle cx="355" cy="218" r="4.5" fill="#00FF88" filter="url(#gg)" class="dot"/>
+    <circle cx="355" cy="218" r="2" fill="#FFFFFF"/>
+    <text x="408" y="222" class="fm" font-size="9.5" font-weight="bold" letter-spacing="1.5" fill="#00FF88" text-anchor="middle">OPEN TO WORK</text>
+  </g>
 </svg>
