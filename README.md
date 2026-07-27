@@ -1,14 +1,14 @@
 <!-- UNIFIED HOLOGRAPHIC HUD GITHUB PROFILE -->
 <p align="center">
-  <img src="header.svg" alt="Yusuf Maulana Header" width="800" />
+  <img src="https://raw.githubusercontent.com/Yusufmaulanaaa/Yusufmaulanaaa-/main/header.svg" alt="Yusuf Maulana Header" width="800" />
 </p>
 
 <p align="center">
-  <img src="skills.svg" alt="Yusuf Maulana Skills" width="800" />
+  <img src="https://raw.githubusercontent.com/Yusufmaulanaaa/Yusufmaulanaaa-/main/skills.svg" alt="Yusuf Maulana Skills" width="800" />
 </p>
 
 <p align="center">
-  <img src="connect.svg" alt="Yusuf Maulana Connect" width="800" />
+  <img src="https://raw.githubusercontent.com/Yusufmaulanaaa/Yusufmaulanaaa-/main/connect.svg" alt="Yusuf Maulana Connect" width="800" />
 </p>
 
 <br />
