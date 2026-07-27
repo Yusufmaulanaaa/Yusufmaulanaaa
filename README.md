@@ -1,20 +1,15 @@
-<!-- UNIFIED HOLOGRAPHIC HUD GITHUB PROFILE -->
-<p align="center">
-  <img src="header.svg" alt="Yusuf Maulana Header" width="100%" />
-</p>
+# Hi, I'm Yusuf Maulana 👋
 
-<p align="center">
-  <img src="skills.svg" alt="Yusuf Maulana Skills" width="100%" />
-</p>
+![Yusuf Maulana Header](header.svg)
 
-<p align="center">
-  <img src="connect.svg" alt="Yusuf Maulana Connect" width="100%" />
-</p>
+![Yusuf Maulana Skills](skills.svg)
 
-<br />
+![Yusuf Maulana Connect](connect.svg)
 
-<!-- GITHUB STATS & LANGUAGES (SYSTEM METRICS) -->
-<h2 align="center">📊 System Metrics 📊</h2>
+---
+
+### 📊 System Metrics
+
 <p align="center">
   <a href="https://github.com/Yusufmaulanaaa">
     <img src="https://github-readme-stats.vercel.app/api?username=Yusufmaulanaaa&amp;show_icons=true&amp;theme=tokyonight&amp;locale=en" alt="Yusuf's GitHub Stats" height="165" />
@@ -24,9 +19,6 @@
   </a>
 </p>
 
-<br />
-
-<!-- PROFILE VIEWS COUNTER -->
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=Yusufmaulanaaa&amp;label=PROFILE+VIEWS&amp;color=00F0FF&amp;style=flat-square" alt="Profile Views" />
 </p>
